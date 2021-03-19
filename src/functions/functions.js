@@ -1,4 +1,5 @@
-﻿  var baseURL = "http://10.1.0.5:5002/api/"
+﻿   var baseURL = "https://d99d22e0c6ce.ngrok.io/api/"
+  // var baseURL = "https://localhost:44383/api/"
 
 
 /**
