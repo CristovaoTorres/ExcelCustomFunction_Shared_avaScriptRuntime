@@ -1,6 +1,7 @@
 {
   "name": "excel-custom-functions-js",
   "version": "2.0.0",
+  "main": "server.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/OfficeDev/Excel-Custom-Functions-JS.git"
@@ -13,18 +14,22 @@
     "source-bundle-url-path": "index.win32"
   },
   "scripts": {
+    "predocker:build": "npm run-script build",
     "build": "webpack -p --mode production --https false",
     "build:dev": "webpack --mode development --https false",
     "build-dev": "webpack --mode development --https false && echo . && echo . && echo . && echo Please use 'build:dev' instead of 'build-dev'.",
     "dev-server": "webpack-dev-server --mode development",
-    "start": "office-addin-debugging start manifest.xml",
+    "start": "node server.js",
     "start:desktop": "office-addin-debugging start manifest.xml desktop",
     "start:web": "office-addin-debugging start manifest.xml web",
     "stop": "office-addin-debugging stop manifest.xml",
     "validate": "office-addin-manifest validate manifest.xml",
     "watch": "webpack --mode development --watch"
   },
-  "dependencies": {},
+  "dependencies": {
+    "express": "^4.16.1"
+
+  },
   "devDependencies": {
     "@babel/core": "^7.10.2",
     "@babel/polyfill": "^7.10.1",
